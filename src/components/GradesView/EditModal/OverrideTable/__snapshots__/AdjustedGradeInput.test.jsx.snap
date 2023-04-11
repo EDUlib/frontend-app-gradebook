@@ -3,11 +3,9 @@
 exports[`AdjustedGradeInput Component snapshots displays input control and "out of possible grade" label 1`] = `
 <span>
   <Control
-    max={5}
-    min="0"
     name="adjustedGradeValue"
     onChange={[MockFunction this.onChange]}
-    type="number"
+    type="text"
     value={1}
   />
    / 5
