@@ -21,28 +21,15 @@ export class AdjustedGradeInput extends React.Component {
   }
 
   onChange = ({ target }) => {
-    let adjustedGradeValue;
-    switch (true) {
-      case target.value < 0:
-        adjustedGradeValue = 0;
-        break;
-      case this.props.possibleGrade && target.value > this.props.possibleGrade:
-        adjustedGradeValue = this.props.possibleGrade;
-        break;
-      default:
-        adjustedGradeValue = target.value;
-    }
-    this.props.setModalState({ adjustedGradeValue });
+    this.props.setModalState({ adjustedGradeValue: target.value });
   };
 
   render() {
     return (
       <span>
         <Form.Control
-          type="number"
+          type="text"
           name="adjustedGradeValue"
-          min="0"
-          max={this.props.possibleGrade ? this.props.possibleGrade : ''}
           value={this.props.value}
           onChange={this.onChange}
         />
